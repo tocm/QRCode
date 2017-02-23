@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">QRCodeSdk_Sample</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_content">Hello Welcome Test the Scan/Generate barcode</string>
+    <string name="generate_barcode_failed">生成二维码失败</string>
+    <string name="scan_barcode_failed">扫码失败</string>
+</resources>
