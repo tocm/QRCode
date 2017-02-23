@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:id="@+id/btn_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ScanBarcode" />
+    
+    <Button
+        android:id="@+id/btn_generate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="generate barCode" />
+
+    <TextView
+        android:id="@+id/contents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/img_barcode"
+         android:layout_width="160dip"
+                   android:layout_height="wrap_content"
+                   android:maxWidth="160dip"
+                   android:maxHeight="160dip"
+                   android:layout_marginBottom="@dimen/half_padding"
+                   android:adjustViewBounds="true"
+                   android:scaleType="centerInside"
+                   tools:ignore="ContentDescription" />
+
+</LinearLayout>
