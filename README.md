@@ -30,7 +30,27 @@
         mIBarcodeEngine = new BarcodeEngineImpl();
         mIBarcodeEngine.setBarcodeEventsListener(new IBarcodeEventsListener() {
             @Override
-            public void callbackBarcodeData(UpBarcodeEventsType upBarcodeEventsType, UpBarcodeEventsStatus upBarcodeEventsStatus, BarcodeEntity barcodeEntity) {`
+            public void callbackBarcodeData(UpBarcodeEventsType upBarcodeEventsType, UpBarcodeEventsStatus upBarcodeEventsStatus, BarcodeEntity barcodeEntity) {
+
+                if (upBarcodeEventsType == UP_BARCODE_EVENTS_TYPE_SCAN) {
+                    if (upBarcodeEventsStatus == UP_BARCODE_EVENTS_STATUS_SUCCESS) {
+                        mTxBarcodeContent.setText(barcodeEntity.getContents());
+                        mImgBarcode.setImageBitmap(Utils.BytesToBimap(barcodeEntity.getBarcodeBuf()));
+                    } else {
+                        Snackbar.make(mBtnTestScan, R.string.scan_barcode_failed, Snackbar.LENGTH_SHORT)
+                                .setAction("Action", null).show();
+                    }
+                } else if (upBarcodeEventsType == UP_BARCODE_EVENTS_TYPE_GENERATION) {
+                    if (upBarcodeEventsStatus == UP_BARCODE_EVENTS_STATUS_SUCCESS) {
+                        mTxBarcodeContent.setText(barcodeEntity.getContents());
+                        mImgBarcode.setImageBitmap(Utils.BytesToBimap(barcodeEntity.getBarcodeBuf()));
+                    } else {
+                        Snackbar.make(mBtnTestGenerate, R.string.generate_barcode_failed, Snackbar.LENGTH_SHORT)
+                                .setAction("Action", null).show();
+                    }
+                }
+            }
+        });`
 2.启动扫码器
 
     `mIBarcodeEngine.scanBarcode(mContext);`
