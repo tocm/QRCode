@@ -71,3 +71,7 @@
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+5. 效果图
+
+![sample](https://github.com/tocm/QRCode/blob/master/sample_1.png)
+
